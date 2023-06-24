@@ -1,0 +1,37 @@
+# create contacts table and set our primary key
+contacts
+--
+contact_id integer PK
+first_name varchar(150)
+last_name varchar(150)
+email varchar(150)
+
+# create category table and set our primary key
+category
+--
+category_id varchar(150) PK
+category varchar(150)
+
+# create subcategory table and set our primary key
+subcategory
+--
+subcategory_id varchar(150) PK
+subcategory varchar(150)
+
+# create campaign table and set our primary key and foreign keys
+campaign
+--
+cf_id integer PK
+contact_id integer FK >- contacts.contact_id
+company_name varchar(300)
+description varchar(300)
+goal decimal
+pledged decimal
+outcome varchar(300)
+backers_count integer
+country varchar(300)
+currency varchar(300)
+launched_date date
+end_date date
+category_id varchar(300) FK >- category.category_id
+subcategory_id varchar(300) FK >- subcategory.subcategory_id
